@@ -45,6 +45,9 @@ Jenis Jenis Ekspresi Menurut Arity dari Operator
 
         "Sintaksi *range() =* range(start, stop, step)"
 
+        range() sengaja pakai sistem "batasan atas ekslusif"
+        (disebut half-open interval).
+
 **While** termasuk sintaks dalam python yang bersifat **idefinite iteration** adalah sebuah proses iterasi yang akan berhenti ketika memnuhi kondisi tertentu. **Increment** adalah pola untuk menambahkan suatu varaibel dengan nilai tetap.
 
                 counter = 1
@@ -52,9 +55,17 @@ Jenis Jenis Ekspresi Menurut Arity dari Operator
                     print(counter)
                     counter += 1 # increment
 
-increment adalah pola untuk menambahkan suatu variabel dengan nilai tetap. pada contoh di atas, `counter += 1` adalah increment yang menambahkan `counter` dengan nilai `1` setiap kali perulangan berlanjut. oke
-
+increment adalah pola untuk menambahkan suatu variabel dengan nilai tetap. pada contoh di atas, `counter += 1` adalah increment yang menambahkan `counter` dengan nilai `1` setiap kali perulangan berlanjut.
+#
 Perulangan dalam perulangan disebut sebagai **nested loop.**
+#
+**nested loop**
+loop di dalam loop seperti iterasi loop luar menjalankan dalam secara penuh
+
+    for baris in range(1, 5):         # loop luar: 4 kali
+        for kolom in range(1, 5):     # loop dalam: 4 kali per baris
+            print(f"({baris},{kolom})", end=" ")
+        print() # pindah baris setelah setiap baris luas
 
 **Break**  pernyataan untuk menghentikan perulangan dan kemudian program akan otomatis keluar dari perulangan tersebut dan kemudian dilanjutkan mengeksekusi blok perulangan selanjutnya jika memiliki perulangan yang bertingkat.
 
@@ -150,7 +161,10 @@ Pass statement adalah pernyataan yang digunakan jika menginginkan sebuah pernyat
         print("nilai x tidak memenuhi kondisi")
     
     #Output:
-
+#
+    def fungsi_nanti():
+        pass # akan diisi nanti
+#
 tidak ada hasil output apapun dikarenakan jika kondisi terpenuhi program tidak akan melakukan apapun statement pass dapat digunakan dalam situasi ketika python memerlukan adanya pernyataan, tetapi tidak memiliki tindakan yang perlu dilakukan pada saat itu. biasanya itu adalah kondisi ketika membutuhkan _placeholder_ untuk menunjukan bahwa tidak ada operasi yang perlu dilakukan. hal tersebut dapat membantu dalam mengatur struktur kode secara rapi dan memungkinkan penambahan implementasi di kemudian hari.
 
 **List Comprehension**

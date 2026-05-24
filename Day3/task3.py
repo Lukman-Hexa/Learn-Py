@@ -1,26 +1,18 @@
-# from readline import append_history_file
+import random
 
-# nilai = 85
+angka_rahasia = random.randint(1, 11)
 
-# if nilai >= 90:
-#     print("A")
-# elif nilai >= 80:
-#     print("B")
-# elif nilai >= 70:
-#     print("C")
-# else:
-#     print("Gagal")
+for kesempatan in range(1, 4):
+    tebak = int(input("tebak angka bre (1-10): "))
+    sisa_kesempatan = 2 - (kesempatan - 1)
 
+    if tebak > angka_rahasia:
+        print(f"Kegedean, lek. Kesempatan lu {sisa_kesempatan}")
+    elif tebak < angka_rahasia:
+        print(f"Kekecilan, no!. Kesempatan lu {sisa_kesempatan}")
+    else:
+        print("good boy")
+        break
 
-buah = ["apel", "mangga", "jeruk"]
-for b in buah:
-    print(b)
-
-buah_baru = append.buah("semangka")
-
-# for i in range(1, 6):
-#     print(i)
-
-# profil = {"nama": "Andi", "umur": 25}
-# for kunci, nilai in profil.items():
-#     print(f"{kunci}: {nilai}")
+else:
+    print("Yah gagal. silahkan topup kembali")
